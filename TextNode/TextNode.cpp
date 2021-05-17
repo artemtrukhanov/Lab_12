@@ -31,8 +31,8 @@ TTextNode::TTextNode(int l, char _c)
 
 TTextNode::TTextNode(const TTextNode& node)
 {
-	next = nullptr;
-	down = nullptr;
+	next = NULL;
+	down = NULL;
 	c = node.c;
 	level = node.level;
 }
@@ -44,7 +44,7 @@ TTextNode::TTextNode(char* s, int l)
 
 	if (l == 1)
 	{
-		next = nullptr;
+		next = NULL;
 		c = 0;
 		level = l;
 		int sz = strlen(s);
@@ -69,16 +69,16 @@ TTextNode::TTextNode(char* s, int l)
 						lcur->SetNext(new TTextNode(3, s[j]));
 						lcur = lcur->GetNext();
 					}
-					lcur->SetNext(nullptr);
+					lcur->SetNext(NULL);
 					start = i + 1;
 				}
 			}
-			wcur->SetNext(nullptr);
+			wcur->SetNext(NULL);
 		}
 	}
 	if (l == 2)
 	{
-		next = nullptr;
+		next = NULL;
 		c = 0;
 		level = l;
 		int sz = strlen(s);
@@ -91,15 +91,15 @@ TTextNode::TTextNode(char* s, int l)
 				lcur->SetNext(new TTextNode(3, s[i]));
 				lcur = lcur->GetNext();
 			}
-			lcur->SetNext(nullptr);
+			lcur->SetNext(NULL);
 		}
 	}
 	if (l == 3)
 	{
 		c = s[0];
 		level = l;
-		next = nullptr;
-		down = nullptr;
+		next = NULL;
+		down = NULL;
 	}
 }
 
@@ -158,11 +158,6 @@ void TTextNode::initMem(int size)
 	{
 		textNodes = new TTextNode[size];
 		firstFree = textNodes;
-
-	    //for (int i = 0; i < size; i++)
-		//{
-	//		tn[i - 1].next = &(tn[i]);
-		//}
 		
 	}
 	else if (firstFree != 0 && textNodes == 0)
@@ -217,8 +212,8 @@ void TTextNode::operator delete(void* p)
 	if (firstFree == 0 && textNodes == 0)
 		throw new exception;
 
-	node->next = nullptr;
-	node->down = nullptr;
+	node->next = NULL;
+	node->down = NULL;
 	node->c = 0;
 	node->level = 3;
 

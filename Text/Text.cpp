@@ -260,9 +260,9 @@ void Text::Delete(int count, TextIter i)
 	}
 
 	if (prev.Get()->GetNext() == i.Get())
-		prev.Get()->SetNext(nullptr);
+		prev.Get()->SetNext(NULL);
 	else
-		prev.Get()->SetDown(nullptr);
+		prev.Get()->SetDown(NULL);
 
 	if (stacks[0].IsEmpty())
 	{
@@ -395,13 +395,13 @@ bool TextIter::GoNextChar()
 		return true;
 	}
 
-	if (node->GetLevel() == 3 && node->GetNext() != nullptr)
+	if (node->GetLevel() == 3 && node->GetNext() != NULL)
 	{
 		node = node->GetNext();
 		return true;
 	}
 
-	if (node->GetLevel() == 3 && node->GetNext() == nullptr)
+	if (node->GetLevel() == 3 && node->GetNext() == NULL)
 	{
 		if (st.IsEmpty())
 			throw new exception;
