@@ -8,14 +8,14 @@ std::ostream& operator<<(std::ostream& o, TTextNode& t)
 	if (t.level == 3)
 	{
 		o << t.c;
-		if (t.next != nullptr)
+		if (t.next != NULL)
 			o << *(t.next);
 	}
 	else
 	{
-		if (t.down != nullptr)
+		if (t.down != NULL)
 			o << *(t.down);
-		if (t.next != nullptr)
+		if (t.next != NULL)
 			o << *(t.next);
 	}
 	return o;
@@ -23,8 +23,8 @@ std::ostream& operator<<(std::ostream& o, TTextNode& t)
 
 TTextNode::TTextNode(int l, char _c)
 {
-	next = nullptr;
-	down = nullptr;
+	next = NULL;
+	down = NULL;
 	c = _c;
 	level = l;
 }
