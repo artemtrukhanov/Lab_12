@@ -407,7 +407,7 @@ bool TextIter::GoNextChar()
 			throw new exception;
 	
 		TTextNode* prev = st.Get();
-		if (prev->GetNext() != nullptr)
+		if (prev->GetNext() != NULL)
 		{
 			st.Push(prev->GetNext());
 			node = prev->GetNext()->GetDown();
